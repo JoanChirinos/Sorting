@@ -1,7 +1,7 @@
 /*
   Sticky Noses - Johnny Wong, Joan Chirinos
   APCS1 pd8
-  HW53
+  HW53 -- Solid Comparative Analysis
   2017-12-14
 */
 
