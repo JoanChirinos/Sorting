@@ -6,6 +6,19 @@
 import java.util.ArrayList;
 
 public class MySorts {
+ 
+    /**********
+     * Best Case for bubbleSort: An AL in ascending order
+     *    Why? Because the way we have it written, it has a constant number
+     *    of comparisons (if AL size is constant). However, it only swaps if
+     *    the element is in the wrong place. It would be better to tell the
+     *    method to stop running once it passes without any swaps
+     * Worst Case for bubbleSort: An AL in descending order
+     *    Why? As previously stated, bubbleSort will do the same number of
+     *    comparisons no matter the order. However, it will do the greatest
+     *    number of swaps when the AL is in descending order. (I think it's
+     *    about 0.5n^2 - 0.5n swaps . I did some trials and graphing stuff)
+     **********/
     
     // Rearranges elements of input ArrayList
     // postcondition: data's elements sorted in ascending order
@@ -39,16 +52,9 @@ public class MySorts {
     }
 
     /**********
-     * Best Case for bubbleSort: An AL in ascending order
-     *    Why? Because the way we have it written, it has a constant number
-     *    of comparisons (if AL size is constant). However, it only swaps if
-     *    the element is in the wrong place. It would be better to tell the
-     *    method to stop running once it passes without any swaps
-     * Worst Case for bubbleSort: An AL in descending order
-     *    Why? As previously stated, bubbleSort will do the same number of
-     *    comparisons no matter the order. However, it will do the greatest
-     *    number of swaps when the AL is in descending order. (I think it's
-     *    about 0.5n^2 - 0.5n swaps . I did some trials and graphing stuff)
+     * There is no worst or best case scenario for selectionSort  because, no
+     * matter what, selectionSort has to do a constant number of comparisons
+     * and swaps (even if an element swaps with itself)
      **********/
     
     // Rearranges elements of input ArrayList
@@ -82,10 +88,16 @@ public class MySorts {
     }//end selectionSort
 
     /**********
-     * There is no worst or best case scenario for selectionSort  because, no
-     * matter what, selectionSort has to do a constant number of comparisons
-     * and swaps (even if an element swaps with itself)
-     **********/
+     * Best case scenario for insertionSort: AL sorted in ascending order
+     *    Why? Because like this, no elements will swap places. This will also
+     *    result in the least number of comparisons
+     * Worst case scenario for insertionSort: AL sorted in descending order
+     *    Why? Because this way, it works sort of like a type of bubble(ish)
+     *    sorting. Starting at element 1 and working towards the last element,
+     *    each element will swap with the adjacent element with a lower index
+     *    until it reaches index 0. This will result in the greatest number of
+     *    swaps and comparisons.
+     **********/    
 
     // Rearranges elements of input ArrayList
     // postcondition: data's elements sorted in ascending order
@@ -119,15 +131,35 @@ public class MySorts {
 	System.out.println("# of passes: " + passcount);
     }//end insertionSort
 
-    /**********
-     * Best case scenario for insertionSort: AL sorted in ascending order
-     *    Why? Because like this, no elements will swap places. This will also
-     *    result in the least number of comparisons
-     * Worst case scenario for insertionSort: AL sorted in descending order
-     *    Why? Because this way, it works sort of like a type of bubble(ish)
-     *    sorting. Starting at element 1 and working towards the last element,
-     *    each element will swap with the adjacent element with a lower index
-     *    until it reaches index 0. This will result in the greatest number of
-     *    swaps and comparisons.
+
+    /******************************
+     * CONCLUSIONS/JUSTIFICATIONS:*
+     ******************************
+     * ***Data drawn from ArrayList of size 1000***
+
+     * bubbleSort's Best Case requires 1 more swap than its Worst Case, 
+     * but they have the same number of passes required.
+     * The number of comparisons are also the same.
+
+     * selectionSort's cases all require the same number of swaps, passes, and
+     * comparisons.
+
+     * insertionSort's Best Case requires 0 swaps, the same number of passes,
+     * and less comparisons
+     * as opposed to it's Worst Case, where its number of swaps equaled the
+     * number of comparisons yet 
+     * required the same number of passes as insertionSort's Best Case.
+
+     * *****TL;DR*****
+     * All three current sort methods bubbleSort, selectionSort, and
+     * insertionSort all seem to be linear.
+     * However, they may have different speeds (in respect to a graph on a
+     * coordinate plane, different slopes)
+     * which is noticeable due to the different number of swaps and comparisons
+     * each method has to take in their best and worst cases.
+     * we can conclude that, although the swaps for these methods increase
+     * linearly, in practice the swaps and comparisons make some run slower
+     * than others, under certain conditions
      **********/
+
 }
