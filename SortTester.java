@@ -20,11 +20,11 @@
 
      * Excecution time for both the Best Case and the Worst Case for 
      * bubbleSort seem to run like a linear function.
-     * Why? The num of passes that it takes for the inputted ArrayList 
-     * increases by a factor of 1 for every added element, which has 
-     * been tested by our bubbleSort method printing out how many 
-     * passes it takes to sort an AL in ascending order as well as an
-     * AL in descending order.
+     *     Why? The num of passes that it takes for the inputted ArrayList 
+     *     increases by a factor of 1 for every added element, which has 
+     *     been tested by our bubbleSort method printing out how many 
+     *     passes it takes to sort an AL in ascending order as well as an
+     *     AL in descending order.
      **********/
 
     /**********
@@ -33,10 +33,12 @@
      * and swaps (even if an element swaps with itself)
 
      * Execution time for selectionSort seems to run like a linear function.
-     * Why? The num of passes that it takes for the inputted ArrayList increases 
-     * by a factor of 1 for every added element,which has been tested by our selectionSort 
-     * method printing out how many passes it takes to sort an AL in ascending order, 
-     * an AL in descending order, and an AL in 'random' (AL has been shuffled by the shuffle method) order.
+     *    Why? The num of passes that it takes for the inputted ArrayList
+     *    increases by 1 for every added element, which has been
+     *    tested by our selectionSort method printing out how many passes it
+     *    takes to sort an AL in ascending order, an AL in descending order,
+     *    and an AL in 'random' (AL has been shuffled by the shuffle method)
+     *    order.
      **********/
 
     /**********
@@ -74,6 +76,9 @@
      * All three current sort methods bubbleSort, selectionSort, and insertionSort all seem to be linear.
      * However, they may have different speeds (in respect to a graph on a coordinate plane, different slopes)
      * which is noticeable due to the different number of swaps and comparisons each method has to take in their best and worst cases.
+     * we can conclude that, although the swaps for these methods increase
+     * linearly, in practice the swaps and comparisons make some run slower
+     * than others, under certain conditions
      **********/
 
 import java.util.ArrayList;
