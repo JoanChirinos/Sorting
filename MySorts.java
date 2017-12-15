@@ -77,8 +77,8 @@ public class MySorts {
 	}
 	System.out.println("# of elements: " + data.size());
 	System.out.println("# of comparisons: " + compcount);
-	System.out.println("# of comparisons: " + compcount);
 	System.out.println("# of swaps: " + swapcount);
+	System.out.println("# of passes: " + passcount);
     }//end selectionSort
 
     /**********
