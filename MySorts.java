@@ -1,6 +1,6 @@
 // Sticky Noses - Johnny Wong, Joan Chirinos
 // APCS1 pd8
-// HW54 -- One File to Bring Them All...
+// HW55 -- Never Fear, Big Oh Is Here!
 // 2017-12-14
 
 import java.util.ArrayList;
@@ -9,12 +9,19 @@ public class MySorts {
     
     // Rearranges elements of input ArrayList
     // postcondition: data's elements sorted in ascending order
+    // Best case time: O(n)
+    // Worst case time: O(n)
+    //    Why? Our implementation of bubbleSort makes n-1 passes. We don't
+    //    have the functionality to recognize when the AL is sorted. Instead,
+    //    we coded for a set number of passes
     public static void bubbleSort( ArrayList<Comparable> data )
     {
-	int swapcount = 0, compcount = 0;
+	
+	int swapcount = 0, compcount = 0, passcount = 0;
 	//make n-1 passes across collection
 	for( int passCtr = 1; passCtr < data.size(); passCtr++ ) {
 
+	    passcount++;
 	    //iterate from first to next-to-last element
 	    for( int i = 0; i < data.size()-1; i++ ) {
 		//if element at i > element at i+1, swap
@@ -25,8 +32,10 @@ public class MySorts {
 		//System.out.println(data); //diag: show current state of list
 	    }
 	}
+	System.out.println("# of elements: " + data.size());
 	System.out.println("# of comparisons: " + compcount);
 	System.out.println("# of swaps: " + swapcount);
+	System.out.println("# of passes: " + passcount);
     }
 
     /**********
@@ -44,15 +53,19 @@ public class MySorts {
     
     // Rearranges elements of input ArrayList
     // postcondition: data's elements sorted in ascending order
+    // Best case time: O(n)
+    // Worst case time: O(n)
+    //    Why? Our implementation of selectionSort makes n-1 passes.
     public static void selectionSort( ArrayList<Comparable> data ) 
     {
-	int swapcount = 0, compcount = 0;
+	int swapcount = 0, compcount = 0, passcount = 0;
 	//note: this version places greatest value at rightmost end,
 
 	//maxPos will point to position of SELECTION (greatest value)
 	int maxPos;
 
 	for( int pass = data.size()-1; pass > 0; pass-- ) {
+	    passcount++;
 	    maxPos = 0;
 	    for( int i = 1; i <= pass; i++ ) {
 		compcount++;
@@ -62,6 +75,8 @@ public class MySorts {
 	    swapcount++;
 	    data.set( maxPos, ( data.set( pass, data.get(maxPos) ) ) );
 	}
+	System.out.println("# of elements: " + data.size());
+	System.out.println("# of comparisons: " + compcount);
 	System.out.println("# of comparisons: " + compcount);
 	System.out.println("# of swaps: " + swapcount);
     }//end selectionSort
@@ -74,10 +89,14 @@ public class MySorts {
 
     // Rearranges elements of input ArrayList
     // postcondition: data's elements sorted in ascending order
+    // Best case time: O(n)
+    // Worst case time: O(n)
+    //    Why? Our implementation of insertionSort makes n-1 passes
     public static void insertionSort( ArrayList<Comparable> data )
     {
-	int swapcount = 0, compcount = 0;
+	int swapcount = 0, compcount = 0, passcount = 0;
 	for( int partition = 1; partition < data.size(); partition++ ) {
+	    passcount++;
 	    //partition marks first item in unsorted region
 
 	    //traverse sorted region from right to left
@@ -94,8 +113,10 @@ public class MySorts {
 		    break; 
 	    }
 	}
+	System.out.println("# of elements: " + data.size());
 	System.out.println("# of comparisons: " + compcount);
 	System.out.println("# of swaps: " + swapcount);
+	System.out.println("# of passes: " + passcount);
     }//end insertionSort
 
     /**********
